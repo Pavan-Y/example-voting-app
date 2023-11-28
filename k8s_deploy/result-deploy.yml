@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-deploy
+  labels:
+    name: result-deploy
+    app: voting
+spec:
+  repliacs: 1
+  selector:
+    matchLabels:
+      name: result-service
+      app: voting
+  template:
+    metadata:
+      name: result-app-pod
+      labels:
+        name: result-app-pod
+        app: voting
+    spec:
+      containers:
+        - name: result-app
+          image: pavany77/result_app:v1
+          ports:
+            containerPort: 80
