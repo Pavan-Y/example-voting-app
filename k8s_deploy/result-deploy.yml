@@ -6,7 +6,7 @@ metadata:
     name: result-deploy
     app: voting
 spec:
-  repliacs: 1
+  replicas: 1
   selector:
     matchLabels:
       name: result-service
@@ -22,4 +22,4 @@ spec:
         - name: result-app
           image: pavany77/result_app:v1
           ports:
-            containerPort: 80
+            - containerPort: 80

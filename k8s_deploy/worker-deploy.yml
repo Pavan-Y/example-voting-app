@@ -6,7 +6,7 @@ metadata:
     name: worker-deploy
     app: voting
 spec:
-  repliacs: 1
+  replicas: 1
   selector:
     matchLabels:
       name: worker-pod
