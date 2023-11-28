@@ -34,3 +34,14 @@ docker run -d --name=worker --link db:db --link redis:redis pavany77/worker:v1
 ## Accessing Services
   - The Voting App can be accessed at http://localhost:5000
   - The Result App can be accessed at http://localhost:5001
+
+
+### Kubernetes Deployment
+
+  - Required manifest files for this app are available [here](https://github.com/Pavan-Y/example-voting-app/tree/main/k8s_deploy)
+
+  
+  Status of the application:
+
+
+    ![deployment_status](https://github.com/Pavan-Y/example-voting-app/blob/main/docs/k8s_deployment_status.png)
