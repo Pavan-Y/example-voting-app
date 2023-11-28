@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deploy
+  labels:
+    name: postgres-deploy
+    app: voting
+spec:
+  repliacs: 1
+  selector:
+    matchLabels:
+      name: postgres-pod
+      app: voting
+  template:
+    metadata:
+      name: postgres-pod
+      labels:
+        name: postgres-pod
+        app: voting
+    spec:
+      containers:
+        - name: postgres
+          image: postgres
+          ports:
+            containerPort: 5432
+          env:
+            - name: POSTGRES_HOST_AUTH_METHOD
+              value: trust
